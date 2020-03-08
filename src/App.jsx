@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
+import KeyboardContainer from './components/KeyboardContainer';
 import Keyboard from './components/Keyboard';
 import { NOTES, KEYBOARD } from './utils/constants';
 
-const App = () => {
+const App = ({
+  getCurrentNotes = () => { },
+}) => {
 
   const [keysDown, setKeysDown] = useState([]);
   const [currentNotes, setCurrentNotes] = useState([]);
-  const keyboardNoteMap = new Map()
+  const keyboardNoteMap = new Map();
 
   for (let i = 0; i < NOTES.length; i++) {
     keyboardNoteMap.set(KEYBOARD[i], NOTES[i])
@@ -32,6 +35,7 @@ const App = () => {
     window.addEventListener("keydown", downHandler);
     window.addEventListener("keyup", upHandler);
     // Remove event listeners on cleanup
+    getCurrentNotes(currentNotes);
     return () => {
       window.removeEventListener("keydown", downHandler);
       window.removeEventListener("keyup", upHandler);
@@ -40,9 +44,9 @@ const App = () => {
 
   return (
     <div>
-      <section>
+      <KeyboardContainer>
         <Keyboard keysPressed={currentNotes} />
-      </section>
+      </KeyboardContainer>
     </div>
   )
 }
