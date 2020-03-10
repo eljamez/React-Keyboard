@@ -1,19 +1,17 @@
-import React, { FunctionComponent, MouseEvent } from 'react';
+import React, { FunctionComponent, MouseEventHandler } from 'react';
 import { NOTES } from '../utils/constants';
 
 import Key from './Key';
 
 type Props = {
     keysPressed: string[];
+    handleSetCurrentNote: MouseEventHandler<HTMLDivElement>;
 }
 
 const Keyboard: FunctionComponent<Props> = ({
-    keysPressed
+    keysPressed,
+    handleSetCurrentNote,
 }) => {
-
-    const handleSetCurrentNote = (e: MouseEvent) => {
-        console.log(e.currentTarget.textContent)
-    }
 
     return (
         <div className="keyboard">

@@ -1,23 +1,23 @@
 @import "./shared.scss";
 
 .keyboardContainer {
-  background: rgb(77, 77, 77);
-  background: linear-gradient(
-    0deg,
-    rgba(77, 77, 77, 1) 0%,
-    rgba(112, 112, 112, 1) 15%,
-    rgba(179, 179, 179, 1) 100%
-  );
+  @include gradient($gray, 60%);
   border-top: 10px solid darkslategray;
-  padding: 0 10px 0;
+  padding: 0 $spacing-large 0;
   box-shadow: 0px 2px 4px 0px black;
 
   .keyboardTop {
     color: white;
+    text-shadow: 1px 0px 3px black;
     h1 {
       font-family: $headerFont;
+      font-size: 4rem;
+      margin: $spacing-mid 0px 0;
       text-transform: uppercase;
-      text-shadow: 1px 1px 1px black;
+    }
+    h2 {
+      font-family: $bodyFont;
+      margin: 0 0 $spacing-mid 0px;
     }
   }
 }

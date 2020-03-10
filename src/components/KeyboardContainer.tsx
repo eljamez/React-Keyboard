@@ -13,6 +13,7 @@ const KeyboardContainer: FunctionComponent<Props> = ({
         <div className="keyboardContainer">
             <div className="keyboardTop">
                 <h1>{name}</h1>
+                <h2>eljamez &copy;</h2>
             </div>
             {children}
         </div>
