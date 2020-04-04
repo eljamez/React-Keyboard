@@ -17,6 +17,7 @@ const App: FC<Props> = ({
 
   const [keysDown, setKeysDown] = useState<KeysDown>([]);
   const [currentNotes, setCurrentNotes] = useState<CurrentNotes>([]);
+  const [lastNotePressed, setLastNotePressed] = useState('');
   const keyboardNoteMap = new Map();
 
   for (let i = 0; i < NOTES.length; i++) {
@@ -43,6 +44,19 @@ const App: FC<Props> = ({
     setCurrentNotes([heldKeys as string]);
   }
 
+  const handleOnMouseDown: MouseEventHandler = (e): void => {
+    const pressedKey = e.currentTarget.textContent;
+    //@ts-ignore
+    setLastNotePressed(pressedKey)
+    //@ts-ignore
+    setCurrentNotes([...currentNotes, pressedKey]);
+  }
+
+  const handleOnMouseUp: MouseEventHandler = (): void => {
+    const currentNotesWithRemovedNote = currentNotes.filter(note => note !== lastNotePressed);
+    setCurrentNotes(currentNotesWithRemovedNote);
+  }
+
   // Add event listeners
   useEffect(() => {
     // @ts-ignore
@@ -59,10 +73,17 @@ const App: FC<Props> = ({
     };
   });
 
+  const keyboradProps = {
+    keysPressed: currentNotes,
+    handleSetCurrentNote,
+    handleOnMouseDown,
+    handleOnMouseUp,
+  }
+
   return (
     <div>
       <KeyboardContainer>
-        <Keyboard keysPressed={currentNotes} handleSetCurrentNote={handleSetCurrentNote} />
+        <Keyboard {...keyboradProps} />
       </KeyboardContainer>
     </div>
   )

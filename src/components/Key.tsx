@@ -2,11 +2,12 @@ import React, { MouseEventHandler, FunctionComponent } from 'react';
 
 type Props = {
     note: string;
-    onClick: MouseEventHandler<HTMLDivElement>;
+    onMouseDown: MouseEventHandler<HTMLDivElement>;
+    onMouseUp: MouseEventHandler<HTMLDivElement>;
     selected: boolean;
 };
 
-const Key: FunctionComponent<Props> = ({ note, onClick, selected }) => {
+const Key: FunctionComponent<Props> = ({ note, selected, onMouseDown, onMouseUp }) => {
     const noteSliced = note.slice()
     const className = noteSliced[1] === '#'
         ? `key--${noteSliced[0]}--sharp key--sharp`
@@ -15,7 +16,10 @@ const Key: FunctionComponent<Props> = ({ note, onClick, selected }) => {
         ? 'selected'
         : ''
     return (
-        <div className={`key ${className} ${selectedClass}`} onClick={onClick}>
+        <div
+            className={`key ${className} ${selectedClass}`}
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}>
             {note}
         </div>
     )

@@ -7,17 +7,21 @@ $bodyFont: "Staatliches", sans-serif;
 @mixin gradient($color, $dark) {
   background: linear-gradient(
     0deg,
-    $color 0%,
+    darken($color, 20%) 0%,
+    $color 2%,
     $color 50%,
-    darken($color, $dark) 100%
+    darken($color, 20%) 98%,
+    darken($color, 60%) 100%
   );
 }
 
 @mixin keyGradient($color) {
   background: linear-gradient(
     0deg,
-    $color 0%,
+    darken($color, 20%) 0%,
+    $color 2%,
     $color 50%,
+    darken($color, 20%) 90%,
     darken($color, 30%) 100%
   );
 }

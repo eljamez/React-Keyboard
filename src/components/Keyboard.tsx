@@ -5,12 +5,14 @@ import Key from './Key';
 
 type Props = {
     keysPressed: string[];
-    handleSetCurrentNote: MouseEventHandler<HTMLDivElement>;
+    handleOnMouseDown: MouseEventHandler<HTMLDivElement>;
+    handleOnMouseUp: MouseEventHandler<HTMLDivElement>;
 }
 
 const Keyboard: FunctionComponent<Props> = ({
     keysPressed,
-    handleSetCurrentNote,
+    handleOnMouseDown,
+    handleOnMouseUp,
 }) => {
 
     return (
@@ -20,7 +22,8 @@ const Keyboard: FunctionComponent<Props> = ({
                 return (<Key
                     key={note}
                     note={note}
-                    onClick={handleSetCurrentNote}
+                    onMouseDown={handleOnMouseDown}
+                    onMouseUp={handleOnMouseUp}
                     selected={isSelected}
                 />)
             })}

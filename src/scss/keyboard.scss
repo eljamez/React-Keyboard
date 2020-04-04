@@ -5,13 +5,11 @@
 }
 
 .keyboard {
-  border-radius: $radius-mid;
-  border-top: 1px solid $gray;
+  border-top: 1px solid lighten(black, 0.7);
   display: grid;
   height: 400px;
   grid-template-columns: 10% 8% 8% 8% 8% 8% 8% 8% 8% 8% 8% 10%;
   grid-template-rows: 60% 40%;
   grid-template-columns: repeat(21, 1fr);
-  box-shadow: inset 0px 0px -2px 0 black;
   transform: translateY($spacing-mid);
 }

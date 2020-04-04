@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Keyboard (EJ-RCT-900)
+
+The React Keyboard is a react component
+
 
 ## Available Scripts
 
