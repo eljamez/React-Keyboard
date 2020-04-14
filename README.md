@@ -4,14 +4,14 @@ The React Keyboard is a react component that provides a "musical typing" enabled
 
 ## Installation
 
-`react-keybaord` is available as an NPM Package
+`react-keybaord-component` is available as an NPM Package
 
 ```
 // npm
-npm install react-keyboard
+npm install react-keyboard-component
 
 // yarn
-yarn add react-keyboard
+yarn add react-keyboard-component
 ```
 
 ## Usage
