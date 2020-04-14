@@ -1,7 +1,6 @@
 {
-  "name": "react-keyboard",
+  "name": "react-keyboard-component",
   "version": "0.1.0",
-  "private": true,
   "author": "James Hall <eljamez@gmail.com> (http://jamescript.com/)",
   "license": "MIT",
   "bugs": {
