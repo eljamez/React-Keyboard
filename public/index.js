@@ -1,2 +1,2 @@
-import { App as ReactKeyboard } from "../src/App.js";
+import ReactKeyboard from "../src/ReactKeyboard";
 export default ReactKeyboard;

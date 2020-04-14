@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FC, KeyboardEventHandler, MouseEventHandler } from 'react';
-import './App.scss';
+import './ReactKeyboard.scss';
 import KeyboardContainer from './components/KeyboardContainer';
 import Keyboard from './components/Keyboard';
 import { NOTES, KEYBOARD } from './utils/constants';
@@ -11,7 +11,7 @@ type Props = {
 type KeysDown = string[];
 type CurrentNotes = string[];
 
-const App: FC<Props> = ({
+const ReactKeyboard: FC<Props> = ({
   getCurrentNotes = () => { },
 }) => {
 
@@ -89,4 +89,4 @@ const App: FC<Props> = ({
   )
 }
 
-export default App;
+export default ReactKeyboard;
