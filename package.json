@@ -1,7 +1,22 @@
 {
-  "name": "keyboard",
+  "name": "react-keyboard",
   "version": "0.1.0",
   "private": true,
+  "author": "James Hall <eljamez@gmail.com> (http://jamescript.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eljamez/React-Keyboard/issues"
+  },
+  "keywords": [
+    "musical-typing",
+    "react-keyboard",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eljamez/React-Keyboard"
+  },
+  "homepage": "https://github.com/eljamez/React-Keyboard#readme",
   "dependencies": {
     "@types/jest": "^24.0.20",
     "@types/node": "^12.11.7",
