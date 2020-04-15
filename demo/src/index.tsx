@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-import ReactKeyboard from "../../src";
+import ReactKeyboard from "../../src/index";
 
 export default class Demo extends Component {
   render() {
@@ -14,4 +14,5 @@ export default class Demo extends Component {
   }
 }
 
+// @ts-ignore
 render(<Demo />, document.querySelector("#demo"));

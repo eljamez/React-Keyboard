@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -16,19 +17,30 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-import React, { useState, useEffect } from 'react';
-import './ReactKeyboard.scss';
-import KeyboardContainer from './components/KeyboardContainer';
-import Keyboard from './components/Keyboard';
-import { NOTES, KEYBOARD } from './utils/constants';
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(require("react"));
+require("./ReactKeyboard.scss");
+var KeyboardContainer_1 = __importDefault(require("./components/KeyboardContainer"));
+var Keyboard_1 = __importDefault(require("./components/Keyboard"));
+var constants_1 = require("./utils/constants");
 var ReactKeyboard = function (_a) {
-    var _b = _a.getCurrentNotes, getCurrentNotes = _b === void 0 ? function () { } : _b;
-    var _c = useState([]), keysDown = _c[0], setKeysDown = _c[1];
-    var _d = useState([]), currentNotes = _d[0], setCurrentNotes = _d[1];
-    var _e = useState(''), lastNotePressed = _e[0], setLastNotePressed = _e[1];
+    var _b = _a.getCurrentNotes, getCurrentNotes = _b === void 0 ? function (_a) { } : _b;
+    var _c = react_1.useState([]), keysDown = _c[0], setKeysDown = _c[1];
+    var _d = react_1.useState([]), currentNotes = _d[0], setCurrentNotes = _d[1];
+    var _e = react_1.useState(''), lastNotePressed = _e[0], setLastNotePressed = _e[1];
     var keyboardNoteMap = new Map();
-    for (var i = 0; i < NOTES.length; i++) {
-        keyboardNoteMap.set(KEYBOARD[i], NOTES[i]);
+    for (var i = 0; i < constants_1.NOTES.length; i++) {
+        keyboardNoteMap.set(constants_1.KEYBOARD[i], constants_1.NOTES[i]);
     }
     var downHandler = function (_a) {
         var key = _a.key;
@@ -51,27 +63,19 @@ var ReactKeyboard = function (_a) {
     };
     var handleOnMouseDown = function (e) {
         var pressedKey = e.currentTarget.textContent;
-        //@ts-ignore
         setLastNotePressed(pressedKey);
-        //@ts-ignore
         setCurrentNotes(__spreadArrays(currentNotes, [pressedKey]));
     };
     var handleOnMouseUp = function () {
         var currentNotesWithRemovedNote = currentNotes.filter(function (note) { return note !== lastNotePressed; });
         setCurrentNotes(currentNotesWithRemovedNote);
     };
-    // Add event listeners
-    useEffect(function () {
-        // @ts-ignore
+    react_1.useEffect(function () {
         window.addEventListener("keydown", downHandler);
-        // @ts-ignore
         window.addEventListener("keyup", upHandler);
-        // Remove event listeners on cleanup
         getCurrentNotes(currentNotes);
         return function () {
-            // @ts-ignore
             window.removeEventListener("keydown", downHandler);
-            // @ts-ignore
             window.removeEventListener("keyup", upHandler);
         };
     });
@@ -81,8 +85,9 @@ var ReactKeyboard = function (_a) {
         handleOnMouseDown: handleOnMouseDown,
         handleOnMouseUp: handleOnMouseUp,
     };
-    return (React.createElement("div", null,
-        React.createElement(KeyboardContainer, null,
-            React.createElement(Keyboard, __assign({}, keyboradProps)))));
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement(KeyboardContainer_1.default, null,
+            react_1.default.createElement(Keyboard_1.default, __assign({}, keyboradProps)))));
 };
-export default ReactKeyboard;
+exports.default = ReactKeyboard;
+//# sourceMappingURL=index.js.map

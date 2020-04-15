@@ -5,7 +5,7 @@
     "target": "es5",
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
-    "allowJs": true, // todo: make this false when all .js files have been converted to .ts/.tsx
+    // "allowJs": true, // todo: make this false when all .js files have been converted to .ts/.tsx
     "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": ["src"],

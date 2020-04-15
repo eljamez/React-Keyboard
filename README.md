@@ -23,7 +23,7 @@ yarn add react-keyboard-component
 In your component...
 
 ```
-import {ReactKeyboard} from 'react-keyboard';
+import ReactKeyboard from 'react-keyboard';
 
 const App = () => {
   // notes are returned as an array

@@ -1,4 +1,6 @@
-export var NOTES = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NOTES = [
     "C",
     "C#",
     "D",
@@ -12,7 +14,7 @@ export var NOTES = [
     "A#",
     "B",
 ];
-export var KEYBOARD = [
+exports.KEYBOARD = [
     "a",
     "w",
     "s",
@@ -26,3 +28,4 @@ export var KEYBOARD = [
     "u",
     "j",
 ];
+//# sourceMappingURL=constants.js.map

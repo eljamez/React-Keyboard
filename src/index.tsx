@@ -12,7 +12,7 @@ type KeysDown = string[];
 type CurrentNotes = string[];
 
 const ReactKeyboard: FC<Props> = ({
-  getCurrentNotes = () => { },
+  getCurrentNotes = ([]) => { },
 }) => {
 
   const [keysDown, setKeysDown] = useState<KeysDown>([]);
