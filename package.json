@@ -1,6 +1,6 @@
 {
   "name": "react-keyboard-component",
-  "version": "1.0.0",
+  "version": "0.1.11",
   "description": "react-keyboard-component React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,9 +12,11 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
+    "build:ts": "tsc",
+    "build:all": "npm-run-all copy:css-to-lib build:ts",
     "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
+    "prepublishOnly": "npm run build:ts&&npm run build&&npm run build",
+    "start": "nwb serve-react-demo --port 3333",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
@@ -28,11 +30,20 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "James Hall <eljamez@gmail.com> (http://jamescript.com/)",
   "license": "MIT",
-  "repository": "",
+  "bugs": {
+    "url": "https://github.com/eljamez/React-Keyboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eljamez/React-Keyboard"
+  },
+  "homepage": "https://github.com/eljamez/React-Keyboard#readme",
   "keywords": [
-    "react-component"
+    "react-component",
+    "musical-typing",
+    "react-keyboard",
+    "react"
   ]
 }
