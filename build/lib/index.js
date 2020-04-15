@@ -58,7 +58,6 @@ var ReactKeyboard = function (_a) {
     };
     var handleSetCurrentNote = function (e) {
         var heldKeys = e.currentTarget.textContent;
-        console.log(heldKeys);
         setCurrentNotes([heldKeys]);
     };
     var handleOnMouseDown = function (e) {
