@@ -7,7 +7,7 @@ type Props = {
 
 const KeyboardContainer: FunctionComponent<Props> = ({
   children,
-  name = 'ej rct 900',
+  name = 'RKC 900',
 }) => {
   return (
     <div className="keyboardContainer">

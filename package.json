@@ -1,6 +1,6 @@
 {
   "name": "react-keyboard-component",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "react-keyboard-component React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -11,12 +11,13 @@
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "npm run build:css && nwb build-react-component --copy-files && npm run build:ts",
     "build:ts": "tsc",
     "build:all": "copy:css-to-lib build:ts",
+    "build:css": "node-sass-chokidar src/ -o src/",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build:ts&&npm run build&&npm run build",
-    "start": "nwb serve-react-demo --port 3333",
+    "start": "npm run build:css && nwb serve-react-demo --port 3333",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
@@ -27,18 +28,19 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "@types/node-sass": "^4.11.0",
     "antd": "^4.1.3",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.5.2",
+    "css-modules-typescript-loader": "^4.0.0",
     "node-sass": "^4.13.1",
+    "node-sass-chokidar": "^1.4.0",
+    "nwb": "0.24.x",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "ts-loader": "^7.0.0",
-    "typescript": "^3.8.3",
     "tslint": "^5.20.1",
-    "nwb": "0.24.x",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "typescript": "^3.8.3"
   },
   "author": "James Hall <eljamez@gmail.com> (http://jamescript.com/)",
   "license": "MIT",

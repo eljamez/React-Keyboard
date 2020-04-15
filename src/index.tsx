@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FC, KeyboardEventHandler, MouseEventHandler } from 'react';
-import './ReactKeyboard.scss';
+import './ReactKeyboard.css';
 import KeyboardContainer from './components/KeyboardContainer';
 import Keyboard from './components/Keyboard';
 import { NOTES, KEYBOARD } from './utils/constants';
