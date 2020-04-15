@@ -40,7 +40,6 @@ const ReactKeyboard: FC<Props> = ({
 
   const handleSetCurrentNote: MouseEventHandler = (e): void => {
     const heldKeys = e.currentTarget.textContent;
-    console.log(heldKeys);
     setCurrentNotes([heldKeys as string]);
   }
 
