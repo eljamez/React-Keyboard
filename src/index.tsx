@@ -6,6 +6,7 @@ import { NOTES, KEYBOARD } from './utils/constants';
 
 type Props = {
   getCurrentNotes?: (arg1: string[]) => void;
+  name?: string;
 }
 
 type KeysDown = string[];
@@ -13,6 +14,7 @@ type CurrentNotes = string[];
 
 const ReactKeyboard: FC<Props> = ({
   getCurrentNotes = ([]) => { },
+  name
 }) => {
 
   const [keysDown, setKeysDown] = useState<KeysDown>([]);
@@ -81,7 +83,7 @@ const ReactKeyboard: FC<Props> = ({
 
   return (
     <div>
-      <KeyboardContainer>
+      <KeyboardContainer name={name}>
         <Keyboard {...keyboradProps} />
       </KeyboardContainer>
     </div>

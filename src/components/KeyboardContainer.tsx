@@ -2,18 +2,17 @@ import React, { FunctionComponent, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  name?: string;
+  name: string;
 }
 
 const KeyboardContainer: FunctionComponent<Props> = ({
   children,
-  name = 'RKC 900',
+  name,
 }) => {
   return (
     <div className="keyboardContainer">
       <div className="keyboardTop">
-        <h1>{name}</h1>
-        <h2>eljamez &copy;</h2>
+        {name && <h1>{name}</h1>}
       </div>
       {children}
     </div>

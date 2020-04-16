@@ -33,13 +33,18 @@ const App = () => {
 
   return (
     <div>
-      <ReactKeyboard handleNotes={handleNotes}>
+      <ReactKeyboard
+        handleNotes={handleNotes}
+        name={'yourCoolName'}
+      >
     </div>
   )
 };
 ```
 
 The notes are returned from the component on any note change. The array returns the notes that are currently being played.
+
+Passing in `name` as a prop ( a string ) will make the name visible on the keyboard itself.
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo

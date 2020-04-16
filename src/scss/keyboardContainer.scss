@@ -18,6 +18,7 @@
       darken($gray, 40%) 100%
     );
   padding: $spacing-mid $spacing-large 0;
+  border-radius: $spacing-small;
   box-shadow: 0px 2px 4px 0px black;
 
   .keyboardTop {
