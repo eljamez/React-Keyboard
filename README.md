@@ -8,7 +8,7 @@ The React Keyboard is a react component that provides a "musical typing" enabled
 
 ## Installation
 
-`react-keybaord-component` is available as an NPM Package
+`react-keyboard-component` is available as an NPM Package
 
 ```
 // npm
