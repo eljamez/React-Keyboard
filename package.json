@@ -34,7 +34,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.5.2",
     "css-modules-typescript-loader": "^4.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "node-sass-chokidar": "^1.4.0",
     "nwb": "0.24.x",
     "sass-loader": "^8.0.2",
