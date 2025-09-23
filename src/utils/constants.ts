@@ -1,4 +1,4 @@
-export const NOTES = [
+export const NOTES: string[] = [
   "C",
   "C#",
   "D",
@@ -12,7 +12,8 @@ export const NOTES = [
   "A#",
   "B",
 ];
-export const KEYBOARD = [
+
+export const KEYBOARD: string[] = [
   "a",
   "w",
   "s",
